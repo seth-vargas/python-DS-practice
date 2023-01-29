@@ -11,3 +11,18 @@ def mode(nums):
         >>> mode([2, 2, 3, 3, 2])
         2
     """
+
+    myDict = {}
+    count = 0
+    mode = 0
+    
+    for num in nums:
+        myDict[num] = myDict.get(num, 0) + 1
+        if myDict[num] >= count:
+            count = myDict[num]
+            mode = num
+
+    return mode
+
+print(mode([1, 2, 1]), 1)
+print(mode([2, 2, 3, 3, 2]), 2)
